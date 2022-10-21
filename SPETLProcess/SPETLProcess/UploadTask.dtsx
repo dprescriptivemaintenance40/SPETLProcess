@@ -1,0 +1,1474 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/21/2022 11:55:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CGG65T8"
+  DTS:CreatorName="DESKTOP-CGG65T8\HP"
+  DTS:DTSID="{4C7DD735-D5BB-4FD9-8095-49F550721F10}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{95B2A3F2-CF62-480B-B323-DADE5C467E4E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[File]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="File"
+      DTS:DTSID="{07339A81-E29D-42E8-9B9D-57F8BCF21927}"
+      DTS:ObjectName="File">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\DPM\SPETLProcess\SPETLProcess\DataFiles\ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{070BCA7C-1C6F-4289-ADF3-47982F3F6914}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TD1"
+              DTS:DTSID="{003530CA-156A-4357-A746-923BB5A859EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TD2"
+              DTS:DTSID="{D21F6A4D-8D06-4746-A952-2CF266AF5BE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DT1"
+              DTS:DTSID="{F1433502-04D0-46E2-B390-89514AE8223C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DT2"
+              DTS:DTSID="{0A035EE8-56A7-43F4-8150-A7E67A5739E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PR1"
+              DTS:DTSID="{3E972C6B-D994-4253-A91D-57CFD52CFAEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PR2"
+              DTS:DTSID="{58A508EB-FC5C-4E30-BC20-1D77C9A37346}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A024895-246D-49DD-A472-9126ECE8DAF5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AssetName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3991EA11-99AA-46E8-8B7D-8385946C7F93}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{09E5AAE1-FAD6-4415-8675-EFCF8AF9CE75}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FMId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6B2D77FA-651A-42CA-8FC6-E1D103E470D2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsProcessCompleted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81BA766E-E617-4CA5-AB95-37E1C9E1F4F6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SPId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Assign Values to variables"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{3c89c95d-b1f9-45ac-8870-7b9a64fac3d9}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign Values to variables">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{643e9157-c261-443f-96c0-e70fd8d20f2d}"
+        DTS:ObjectName="{BEF434B3-6DDC-4387-85D4-D42F4FF05408}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::DataList" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables />
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{8940054A-1540-4CBB-9D51-4F0F725609B2}"
+          DTS:ObjectName="{8940054A-1540-4CBB-9D51-4F0F725609B2}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FMId" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{382D5057-BCA0-4E5E-87C0-4A8DC0CFA217}"
+          DTS:ObjectName="{382D5057-BCA0-4E5E-87C0-4A8DC0CFA217}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::IsProcessCompleted" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{E68BBA6C-882B-4969-8068-D6231DEE87A4}"
+          DTS:ObjectName="{E68BBA6C-882B-4969-8068-D6231DEE87A4}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::AssetName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{47900E99-7BE6-4367-B311-1F5F02841A54}"
+          DTS:ObjectName="{47900E99-7BE6-4367-B311-1F5F02841A54}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::SPId" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d63423af-4c11-480b-9b9d-3c27ac0bc1f3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from
+(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] 
+where IsProcessCompleted=1  AND Description=N'"+ @[$Project::FileName] +"') F
+LEFT JOIN 
+(SELECT AssetName,Id from Asset_Equipments ) A
+ ON (F.EquipmentId=A.Id)
+ LEFT JOIN 
+ (SELECT * from ScrewParameters) S 
+ ON (F.Id=S.FailureModeId)"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DB200F2E-F2B8-48DD-9310-98749F0C6896}"
+          SQLTask:SqlStatementSource="SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA; LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::DataList" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File_Upload Task SP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{fad44072-b1df-4fd8-8ee0-79fa04432085}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File_Upload Task SP">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\File_Upload Task SP\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[TD1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TD1"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[TD2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TD2"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD2]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[DT1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DT1"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[DT2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DT2"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT2]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[PR1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PR1"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[PR2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PR2"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR2]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]"
+                      name="DCTD1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]"
+                      name="DCTD2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]"
+                      name="DCDT1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]"
+                      name="DCDT2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]"
+                      name="DCPR1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]"
+                      name="DCPR2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
+                      name="DCDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Upload Task SP\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[SPId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                      name="SPId"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::SPId]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::SPId]</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCTD1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCTD1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCTD1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCTD2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCTD2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCTD2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCDT1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCDT1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCDT1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCDT2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCDT2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCDT2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCPR1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCPR1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCPR1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCPR2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCPR2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCPR2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input].Columns[DCDate]"
+                      cachedDataType="dbDate"
+                      cachedName="DCDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCDate</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Upload Task SP\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\File_Upload Task SP\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[File]"
+                  connectionManagerRefId="Package.ConnectionManagers[File]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TD1]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD1]"
+                      name="TD1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TD2]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[TD2]"
+                      name="TD2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DT1]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT1]"
+                      name="DT1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DT2]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[DT2]"
+                      name="DT2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PR1]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR1]"
+                      name="PR1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PR2]"
+                      length="50"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[PR2]"
+                      name="PR2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TD1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TD1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TD2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TD2" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DT1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DT1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DT2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DT2" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PR1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PR1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PR2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PR2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Upload Task SP\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[ScrewStagingTables] VALUES(?,?,?,?,?,?,?,?)</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\File_Upload Task SP\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{DB200F2E-F2B8-48DD-9310-98749F0C6896}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCDate]"
+                      cachedDataType="dbDate"
+                      cachedName="DCDate"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCTD1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCTD1"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCTD2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCTD2"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCDT1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCDT1"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCDT2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCDT2"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPR1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCPR1"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]" />
+                    <inputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].Columns[DCPR2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DCPR2"
+                      externalMetadataColumnId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp2"
+                      name="Param_1"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="nText"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="nText"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="nText"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="nText"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="nText"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="nText"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Upload Task SP\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\File_Upload Task SP.Paths[Data Conversion Output]"
+              endId="Package\File_Upload Task SP\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\File_Upload Task SP\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\File_Upload Task SP.Paths[Derived Column Output]"
+              endId="Package\File_Upload Task SP\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\File_Upload Task SP\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\File_Upload Task SP.Paths[Flat File Source Output]"
+              endId="Package\File_Upload Task SP\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\File_Upload Task SP\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{f4fcf962-3eb0-46d4-a3ae-060bc1afb25d}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Assign Values to variables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{85cb50de-d969-42fe-b374-b8a21262d892}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::IsProcessCompleted]==1"
+      DTS:From="Package\Assign Values to variables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\File_Upload Task SP" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="199.2,49.6"
+          Size="199.2,92.8"
+          Id="Package\Assign Values to variables"
+          TopLeft="150.000002554485,113.070589854726" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="167.000003661429,42.8235300123485" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\File_Upload Task SP"
+          TopLeft="157.44286407646,248.805882320768" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="248.900003107957,84.4235300123486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.6470598423774"
+              Start="0,0"
+              End="0,21.1470598423774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1470598423774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="246.921433315472,205.870589854726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9352924660419"
+              Start="0,0"
+              End="0,35.4352924660419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4352924660419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.71764623302093,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\File_Upload Task SP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\File_Upload Task SP\OLE DB Command"
+          TopLeft="257.142861521974,238.588238640228" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\File_Upload Task SP\Flat File Source"
+          TopLeft="62.1428582011437,15.294117861553" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\File_Upload Task SP\Data Conversion"
+          TopLeft="100.00000170299,84.8823541316194" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\File_Upload Task SP\Derived Column"
+          TopLeft="177.142860159582,161.352943439385" />
+        <EdgeLayout
+          Id="Package\File_Upload Task SP.Paths[Flat File Source Output]"
+          TopLeft="137.342858201144,56.894117861553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.2571435018463,27.9882362700664"
+              Start="0,0"
+              End="40.2571435018463,20.4882362700664">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.9941181350332" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.9941181350332"
+                    Point2="0,13.9941181350332"
+                    Point3="4,13.9941181350332" />
+                  <mssgle:LineSegment
+                    End="36.2571435018463,13.9941181350332" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.2571435018463,13.9941181350332"
+                    Point2="40.2571435018463,13.9941181350332"
+                    Point3="40.2571435018463,17.9941181350332" />
+                  <mssgle:LineSegment
+                    End="40.2571435018463,20.4882362700664" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Upload Task SP.Paths[Derived Column Output]"
+          TopLeft="253.542860159582,202.952943439385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.000001362392,35.6352952008427"
+              Start="0,0"
+              End="86.000001362392,28.1352952008427">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8176476004214" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8176476004214"
+                    Point2="0,17.8176476004214"
+                    Point3="4,17.8176476004214" />
+                  <mssgle:LineSegment
+                    End="82.000001362392,17.8176476004214" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.000001362392,17.8176476004214"
+                    Point2="86.000001362392,17.8176476004214"
+                    Point3="86.000001362392,21.8176476004214" />
+                  <mssgle:LineSegment
+                    End="86.000001362392,28.1352952008427" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Upload Task SP.Paths[Data Conversion Output]"
+          TopLeft="177.60000170299,126.482354131619">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.942858456592,34.8705893077656"
+              Start="0,0"
+              End="75.942858456592,27.3705893077656">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4352946538828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4352946538828"
+                    Point2="0,17.4352946538828"
+                    Point3="4,17.4352946538828" />
+                  <mssgle:LineSegment
+                    End="71.942858456592,17.4352946538828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.942858456592,17.4352946538828"
+                    Point2="75.942858456592,17.4352946538828"
+                    Point3="75.942858456592,21.4352946538828" />
+                  <mssgle:LineSegment
+                    End="75.942858456592,27.3705893077656" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

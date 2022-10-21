@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLEDb"
+  DTS:DTSID="{DB200F2E-F2B8-48DD-9310-98749F0C6896}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-CGG65T8;Initial Catalog=DPM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-SPETLProcess-{DB200F2E-F2B8-48DD-9310-98749F0C6896}DESKTOP-CGG65T8.DPM1;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

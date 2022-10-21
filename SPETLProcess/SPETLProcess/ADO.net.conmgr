@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO.net"
+  DTS:DTSID="{8BD1628C-A044-441D-B25B-F065CAA26F9E}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-CGG65T8;Initial Catalog=DPM;Integrated Security=True;Application Name=SSIS-SPETLProcess-{8BD1628C-A044-441D-B25B-F065CAA26F9E}DESKTOP-CGG65T8.DPM;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

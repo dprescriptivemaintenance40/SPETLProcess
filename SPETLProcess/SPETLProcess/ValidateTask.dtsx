@@ -1,0 +1,1884 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/21/2022 11:56:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-CGG65T8"
+  DTS:CreatorName="DESKTOP-CGG65T8\HP"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{610E702B-72A2-4E5D-8ACE-E984151237BD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{2A1365FA-B511-47EF-9914-1A5EBC1490E7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5975C323-18E5-4003-91B4-40E77FFFA07F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AssetName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{49BABE1B-E89B-4D3B-A338-72985472CCE5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2AAD6086-E270-466B-9D4D-E49076094A0F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FMId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE976B28-00BE-40B6-B4AE-438F433846A6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsProcessCompleted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A86F707-46E9-492D-98D6-F9B88C8509CB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SPId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Assign Values to variables"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{f0e57d5a-e6b8-4e54-a9af-4efd82b6c27a}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Assign Values to variables">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{7be4c568-e92f-4f35-add0-e21e6f7772c7}"
+        DTS:ObjectName="{BEF434B3-6DDC-4387-85D4-D42F4FF05408}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::DataList" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables />
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{daf1238f-e9f5-4fa9-b2dd-99a191919293}"
+          DTS:ObjectName="{8940054A-1540-4CBB-9D51-4F0F725609B2}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FMId" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{f100b079-7a63-4216-8ae8-42a6cda43b62}"
+          DTS:ObjectName="{382D5057-BCA0-4E5E-87C0-4A8DC0CFA217}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::IsProcessCompleted" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{ba0edf32-3c63-4e2f-a656-464799129993}"
+          DTS:ObjectName="{E68BBA6C-882B-4969-8068-D6231DEE87A4}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::AssetName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{aabad849-c1d1-407b-bbbc-294b01187922}"
+          DTS:ObjectName="{47900E99-7BE6-4367-B311-1F5F02841A54}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::SPId" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{beaf7391-f7d7-475a-8996-0ae3769f9015}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from
+(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] 
+where IsProcessCompleted=1  AND Description=N'"+ @[$Project::FileName] +"') F
+LEFT JOIN 
+(SELECT AssetName,Id from Asset_Equipments ) A
+ ON (F.EquipmentId=A.Id)
+ LEFT JOIN 
+ (SELECT * from ScrewParameters) S 
+ ON (F.Id=S.FailureModeId)"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DB200F2E-F2B8-48DD-9310-98749F0C6896}"
+          SQLTask:SqlStatementSource="SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA; LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::DataList" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File_Validate Task SP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{c568eed8-a319-45b5-ac9d-f5676a6bb15f}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File_Validate Task SP">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="[ADO NET Source].[SqlCommand]">"SELECT Id, SPId, Date, TD1, TD2, DT1, DT2, PR1, PR2
+ FROM ScrewStagingTables 
+WHERE  (SPId = '+CAST( @[User::SPId] AS VARCHAR(20))+')"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\File_Validate Task SP\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Id, SPId, Date, TD1, TD2, DT1, DT2, PR1, PR2
+ FROM ScrewStagingTables 
+WHERE  (SPId = '+CAST( @[User::SPId] AS VARCHAR(20))+')</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\File_Validate Task SP\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{8BD1628C-A044-441D-B25B-F065CAA26F9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ADO.net]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[SPId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SPId]"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[SPId]"
+                      name="SPId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Date]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Date]"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Date]"
+                      name="Date"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TD1]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD1]"
+                      name="TD1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TD2]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD2]"
+                      name="TD2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DT1]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT1]"
+                      name="DT1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DT2]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT2]"
+                      name="DT2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PR1]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR1]"
+                      name="PR1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PR2]"
+                      length="50"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR2]"
+                      name="PR2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SPId]"
+                      dataType="i4"
+                      name="SPId" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Date]"
+                      dataType="dbTimeStamp2"
+                      name="Date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TD1]"
+                      dataType="nText"
+                      name="TD1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TD2]"
+                      dataType="nText"
+                      name="TD2" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DT1]"
+                      dataType="nText"
+                      name="DT1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DT2]"
+                      dataType="nText"
+                      name="DT2" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PR1]"
+                      dataType="nText"
+                      name="PR1" />
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PR2]"
+                      dataType="nText"
+                      name="PR2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SPId]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SPId]"
+                      name="SPId" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Date]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Date]"
+                      name="Date"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TD1]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TD1]"
+                      name="TD1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TD2]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TD2]"
+                      name="TD2" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DT1]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DT1]"
+                      name="DT1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DT2]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DT2]"
+                      name="DT2" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PR1]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PR1]"
+                      name="PR1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PR2]"
+                      dataType="nText"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PR2]"
+                      name="PR2" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Validate Task SP\Applying Validations"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Applying Validations"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCTD1]"
+                      cachedDataType="r8"
+                      cachedName="DCTD1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]} &gt; 150) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]} &lt; 250))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCTD1 != 0) &amp;&amp; (DCTD1 &gt; 150) &amp;&amp; (DCTD1 &lt; 250))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCTD2]"
+                      cachedDataType="r8"
+                      cachedName="DCTD2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]} &gt; 110) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]} &lt; 190))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCTD2 != 0) &amp;&amp; (DCTD2 &gt; 110) &amp;&amp; (DCTD2 &lt; 190))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCDT1]"
+                      cachedDataType="r8"
+                      cachedName="DCDT1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]} &gt; 140) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]} &lt; 177))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCDT1 != 0) &amp;&amp; (DCDT1 &gt; 140) &amp;&amp; (DCDT1 &lt; 177))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCDT2]"
+                      cachedDataType="r8"
+                      cachedName="DCDT2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]} &gt; 90) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]} &lt; 129))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCDT2 != 0) &amp;&amp; (DCDT2 &gt; 90) &amp;&amp; (DCDT2 &lt; 129))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCPR1]"
+                      cachedDataType="r8"
+                      cachedName="DCPR1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]} &gt; 175) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]} &lt; 205))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCPR1 != 0) &amp;&amp; (DCPR1 &gt; 175) &amp;&amp; (DCPR1 &lt; 205))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCPR2]"
+                      cachedDataType="r8"
+                      cachedName="DCPR2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]} != 0) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]} &gt; 130) &amp;&amp; (#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]} &lt; 155))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DCPR2 != 0) &amp;&amp; (DCPR2 &gt; 130) &amp;&amp; (DCPR2 &lt; 155))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[DCDate]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="DCDate"
+                      cachedScale="7"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDate]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDate]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DCDate</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[Id]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[Id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Id</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input].Columns[SPId]"
+                      cachedDataType="i4"
+                      cachedName="SPId"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SPId</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Validate Task SP\Clean Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Clean Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[ScrewCleaningTables] VALUES(?,?,?,?,?,?,?,?)</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\File_Validate Task SP\Clean Data.Connections[OleDbConnection]"
+                  connectionManagerID="{DB200F2E-F2B8-48DD-9310-98749F0C6896}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[SPId]"
+                      cachedDataType="i4"
+                      cachedName="SPId"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCDate]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="DCDate"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDate]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCTD1]"
+                      cachedDataType="r8"
+                      cachedName="DCTD1"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCTD2]"
+                      cachedDataType="r8"
+                      cachedName="DCTD2"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCPR1]"
+                      cachedDataType="r8"
+                      cachedName="DCPR1"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCPR2]"
+                      cachedDataType="r8"
+                      cachedName="DCPR2"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCDT1]"
+                      cachedDataType="r8"
+                      cachedName="DCDT1"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].Columns[DCDT2]"
+                      cachedDataType="r8"
+                      cachedName="DCDT2"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp2"
+                      name="Param_1"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="r4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="r4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="r4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="r4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="r4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="r4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Clean Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Validate Task SP\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[TD1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TD1"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[TD2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TD2"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[DT1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DT1"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[DT2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DT2"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[PR1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PR1"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[PR2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PR2"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Date"
+                      cachedScale="7"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]"
+                      name="DCTD1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]"
+                      name="DCTD2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[TD2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]"
+                      name="DCDT1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]"
+                      name="DCDT2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[DT2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]"
+                      name="DCPR1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]"
+                      name="DCPR2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[PR2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]"
+                      name="DCDate"
+                      scale="7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Validate Task SP\Error Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Error Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT into [DPM].[dbo].[ScrewErrorTables] VALUES(?,?,?)</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\File_Validate Task SP\Error Data.Connections[OleDbConnection]"
+                  connectionManagerID="{DB200F2E-F2B8-48DD-9310-98749F0C6896}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLEDb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].Columns[SPId]"
+                      cachedDataType="i4"
+                      cachedName="SPId"
+                      externalMetadataColumnId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="nText"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\Error Data.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\File_Validate Task SP\SP Aggregation of data"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="SP Aggregation of data"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCTD1]"
+                      cachedDataType="r8"
+                      cachedName="DCTD1"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCTD2]"
+                      cachedDataType="r8"
+                      cachedName="DCTD2"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCDT1]"
+                      cachedDataType="r8"
+                      cachedName="DCDT1"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCDT2]"
+                      cachedDataType="r8"
+                      cachedName="DCDT2"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCPR1]"
+                      cachedDataType="r8"
+                      cachedName="DCPR1"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCPR2]"
+                      cachedDataType="r8"
+                      cachedName="DCPR2"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[SPId]"
+                      cachedDataType="i4"
+                      cachedName="SPId"
+                      lineageId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[SPId]" />
+                    <inputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1].Columns[DCDate]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="DCDate"
+                      cachedScale="7"
+                      lineageId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDate]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDate]"
+                      name="DCDate"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDate]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD1]"
+                      name="DCTD1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD1]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCTD2]"
+                      name="DCTD2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCTD2]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT1]"
+                      name="DCDT1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT1]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCDT2]"
+                      name="DCDT2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCDT2]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR1]"
+                      name="DCPR1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR1]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]"
+                      dataType="r8"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[DCPR2]"
+                      name="DCPR2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output].Columns[DCPR2]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[Id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]"
+                      dataType="i4"
+                      lineageId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1].Columns[SPId]"
+                      name="SPId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output].Columns[SPId]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\File_Validate Task SP.Paths[ADO NET Source Output]"
+              endId="Package\File_Validate Task SP\Data Conversion.Inputs[Data Conversion Input]"
+              name="ADO NET Source Output"
+              startId="Package\File_Validate Task SP\ADO NET Source.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\File_Validate Task SP.Paths[Aggregate Output 1]"
+              endId="Package\File_Validate Task SP\Applying Validations.Inputs[Derived Column Input]"
+              name="Aggregate Output 1"
+              startId="Package\File_Validate Task SP\SP Aggregation of data.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\File_Validate Task SP.Paths[Data Conversion Output]"
+              endId="Package\File_Validate Task SP\SP Aggregation of data.Inputs[Aggregate Input 1]"
+              name="Data Conversion Output"
+              startId="Package\File_Validate Task SP\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\File_Validate Task SP.Paths[Derived Column Error Output]"
+              endId="Package\File_Validate Task SP\Error Data.Inputs[OLE DB Command Input]"
+              name="Derived Column Error Output"
+              startId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Error Output]" />
+            <path
+              refId="Package\File_Validate Task SP.Paths[Derived Column Output]"
+              endId="Package\File_Validate Task SP\Clean Data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\File_Validate Task SP\Applying Validations.Outputs[Derived Column Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{84956b41-e276-4389-9484-a848dbf7a3bd}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Assign Values to variables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{73ad8400-68ee-4e30-b846-289d24fc7d03}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::IsProcessCompleted]==1"
+      DTS:From="Package\Assign Values to variables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\File_Validate Task SP" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="199.2,49.6"
+          Size="199.2,92.8"
+          Id="Package\Assign Values to variables"
+          TopLeft="60,130.247059842377" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="77.000001106944,60" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\File_Validate Task SP"
+          TopLeft="67.442861521975,265.982352308419" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="158.900000553472,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.6470598423774"
+              Start="0,0"
+              End="0,21.1470598423774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1470598423774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="158.121430760987,223.047059842377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.935292466042"
+              Start="0,0"
+              End="0,35.435292466042">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.435292466042" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.71764623302101,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\File_Validate Task SP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\File_Validate Task SP\Error Data"
+          TopLeft="265.714290239373,118.529413427036" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\File_Validate Task SP\Clean Data"
+          TopLeft="543.571437828395,211.82353238251" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\File_Validate Task SP\SP Aggregation of data"
+          TopLeft="518.571437402648,25.2352944715626" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\File_Validate Task SP\Applying Validations"
+          TopLeft="521.428580308447,110.88235449626" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\File_Validate Task SP\Data Conversion"
+          TopLeft="281.428576221272,25.2352944715625" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\File_Validate Task SP\ADO NET Source"
+          TopLeft="65.0000011069435,26.7647062577178" />
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Derived Column Output]"
+          TopLeft="611.300009068421,152.48235449626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3411778862502"
+              Start="0,0"
+              End="0,51.8411778862502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8411778862502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Derived Column Error Output]"
+          TopLeft="521.428580308447,135.505883961648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-128.514290069074,0"
+              Start="0,0"
+              End="-121.014290069074,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-121.014290069074,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.468531753287,5,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Data Conversion Output]"
+          TopLeft="436.628576221272,46.0352944715626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.942861181376,0"
+              Start="0,0"
+              End="74.442861181376,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="74.442861181376,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Aggregate Output 1]"
+          TopLeft="613.200008855547,66.8352944715626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0470600246974"
+              Start="0,0"
+              End="0,36.5470600246974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5470600246974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[ADO NET Source Output]"
+          TopLeft="222.600001106944,46.8000003646402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.828575114328,0"
+              Start="0,0"
+              End="51.328575114328,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51.328575114328,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\File_Validate Task SP\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
