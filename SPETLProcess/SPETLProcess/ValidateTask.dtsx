@@ -12,8 +12,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{0CE7ACBF-74B9-4189-B0FB-4CB1F2740379}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{111C2DC0-B3AA-40DD-BD54-D2B85B02ADEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -97,26 +97,26 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{daf1238f-e9f5-4fa9-b2dd-99a191919293}"
-          DTS:ObjectName="{8940054A-1540-4CBB-9D51-4F0F725609B2}"
+          DTS:DTSID="{4762A43F-F9B3-46EE-AD77-23DD6F5DECB8}"
+          DTS:ObjectName="{4762A43F-F9B3-46EE-AD77-23DD6F5DECB8}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FMId" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{f100b079-7a63-4216-8ae8-42a6cda43b62}"
-          DTS:ObjectName="{382D5057-BCA0-4E5E-87C0-4A8DC0CFA217}"
+          DTS:DTSID="{A17EE703-F4CB-4ADC-BF41-B2FC8A0B1B30}"
+          DTS:ObjectName="{A17EE703-F4CB-4ADC-BF41-B2FC8A0B1B30}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::IsProcessCompleted" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{ba0edf32-3c63-4e2f-a656-464799129993}"
-          DTS:ObjectName="{E68BBA6C-882B-4969-8068-D6231DEE87A4}"
+          DTS:DTSID="{E443CE68-2566-437A-8232-315DF9305C0E}"
+          DTS:ObjectName="{E443CE68-2566-437A-8232-315DF9305C0E}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::AssetName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{aabad849-c1d1-407b-bbbc-294b01187922}"
-          DTS:ObjectName="{47900E99-7BE6-4367-B311-1F5F02841A54}"
+          DTS:DTSID="{72554666-4928-431E-BECC-35AFAAF52D73}"
+          DTS:ObjectName="{72554666-4928-431E-BECC-35AFAAF52D73}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::SPId" />
       </DTS:ForEachVariableMappings>
@@ -1847,13 +1847,33 @@ WHERE SPId = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\File_Validate Task SP\OLE DB Source"
+          TopLeft="68.5714297391931,28.2941180438732" />
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\File_Validate Task SP\DC Error"
+          TopLeft="97.1428587971902,113.94117806857" />
+        <NodeLayout
           Size="155.2,41.6"
           Id="Package\File_Validate Task SP\Data Conversion"
           TopLeft="281.428576221272,25.2352944715625" />
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\File_Validate Task SP\OLE DB Source"
-          TopLeft="68.5714297391931,28.2941180438732" />
+          Size="187.2,41.6"
+          Id="Package\File_Validate Task SP\SP Aggregation of data"
+          TopLeft="517.857151676198,22.9411767923296" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\File_Validate Task SP\Validation Error"
+          TopLeft="630.000010728836,212.588238275587" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\File_Validate Task SP\Applying Validations"
+          TopLeft="518.571437402648,110.88235449626" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\File_Validate Task SP\Clean Data"
+          TopLeft="382.142863650712,214.88235595482" />
         <EdgeLayout
           Id="Package\File_Validate Task SP.Paths[OLE DB Source Output]"
           TopLeft="218.171429739193,47.5647062577178">
@@ -1876,106 +1896,6 @@ WHERE SPId = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\File_Validate Task SP\DC Error"
-          TopLeft="97.1428587971902,113.94117806857" />
-        <EdgeLayout
-          Id="Package\File_Validate Task SP.Paths[Data Conversion Error Output]"
-          TopLeft="359.028576221272,66.8352944715625">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-202.685717424082,47.1058835970077"
-              Start="0,0"
-              End="-202.685717424082,39.6058835970077">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5529417985039" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5529417985039"
-                    Point2="0,23.5529417985039"
-                    Point3="-4,23.5529417985039" />
-                  <mssgle:LineSegment
-                    End="-198.685717424082,23.5529417985039" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-198.685717424082,23.5529417985039"
-                    Point2="-202.685717424082,23.5529417985039"
-                    Point3="-202.685717424082,27.5529417985039" />
-                  <mssgle:LineSegment
-                    End="-202.685717424082,39.6058835970077" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-167.429245430791,28.5529417985039,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\File_Validate Task SP\SP Aggregation of data"
-          TopLeft="517.857151676198,22.9411767923296" />
-        <EdgeLayout
-          Id="Package\File_Validate Task SP.Paths[Data Conversion Output]"
-          TopLeft="436.628576221272,44.8882356319461">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.2285754549261,0"
-              Start="0,0"
-              End="73.7285754549261,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="73.7285754549261,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\File_Validate Task SP\Applying Validations"
-          TopLeft="518.571437402648,110.88235449626" />
-        <EdgeLayout
-          Id="Package\File_Validate Task SP.Paths[Aggregate Output 1]"
-          TopLeft="608.214294539423,64.5411767923297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.34117770393"
-              Start="0,0"
-              End="0,38.84117770393">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.84117770393" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\File_Validate Task SP\Validation Error"
-          TopLeft="630.000010728836,212.588238275587" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\File_Validate Task SP\Clean Data"
-          TopLeft="382.142863650712,214.88235595482" />
         <EdgeLayout
           Id="Package\File_Validate Task SP.Paths[Derived Column Output]"
           TopLeft="577.504770735981,152.48235449626">
@@ -2044,6 +1964,86 @@ WHERE SPId = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-28.3804333889891,29.3732115875806,129.9227734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Data Conversion Output]"
+          TopLeft="436.628576221272,44.8882356319461">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.2285754549261,0"
+              Start="0,0"
+              End="73.7285754549261,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.7285754549261,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Data Conversion Error Output]"
+          TopLeft="359.028576221272,66.8352944715625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202.685717424082,47.1058835970077"
+              Start="0,0"
+              End="-202.685717424082,39.6058835970077">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5529417985039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5529417985039"
+                    Point2="0,23.5529417985039"
+                    Point3="-4,23.5529417985039" />
+                  <mssgle:LineSegment
+                    End="-198.685717424082,23.5529417985039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198.685717424082,23.5529417985039"
+                    Point2="-202.685717424082,23.5529417985039"
+                    Point3="-202.685717424082,27.5529417985039" />
+                  <mssgle:LineSegment
+                    End="-202.685717424082,39.6058835970077" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-167.429245430791,28.5529417985039,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\File_Validate Task SP.Paths[Aggregate Output 1]"
+          TopLeft="608.214294539423,64.5411767923297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.34117770393"
+              Start="0,0"
+              End="0,38.84117770393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.84117770393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

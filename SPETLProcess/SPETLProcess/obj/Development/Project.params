@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00</SSIS:Property>
+        SSIS:Name="Value">ScrewCompressor_1e280383-8249-4f16-89ca-c8c3ddaf4c01</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,49 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">E:\DPM\SPETLProcess\SPETLProcess\DataFiles\ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00.csv</SSIS:Property>
+        SSIS:Name="Value">E:\DPM\SPETLProcess\SPETLProcess\DataFiles\ScrewCompressor_1e280383-8249-4f16-89ca-c8c3ddaf4c01.csv</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="PythonExe">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{057dd7ab-3508-4b15-94b4-7705509688f3}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">C:\Users\HP\AppData\Local\Programs\Python\Python310\python.exe</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="MissingVal">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{0da48f5c-6e5c-44f6-aa5f-17c22ecebe5a}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">E:\DPM\SPETLProcess\SPETLProcess\PythonFiles\MissingValuesDB.py</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
