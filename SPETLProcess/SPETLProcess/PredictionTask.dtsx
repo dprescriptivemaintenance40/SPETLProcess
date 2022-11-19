@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-CGG65T8\HP"
   DTS:DTSID="{E792ECE7-AAF0-467F-8866-D804EBABEFF9}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="16393"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{CDAE2F83-D466-4C85-A5BA-77661EEFCCCC}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{E0C8C536-AB04-49B9-B9B5-7D1047F5DFF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -155,7 +155,7 @@ LEFT JOIN
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DB200F2E-F2B8-48DD-9310-98749F0C6896}"
-          SQLTask:SqlStatementSource="SELECT ISNULL(Count(SPId),0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA;LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)&#xA;LEFT JOIN&#xA; (SELECT SPId FROM ScrewPredictedTables) SP&#xA; ON (S.Id=SP.SPId)"
+          SQLTask:SqlStatementSource="SELECT ISNULL(Count(SPId),0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_1e280383-8249-4f16-89ca-c8c3ddaf4c01') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA;LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)&#xA;LEFT JOIN&#xA; (SELECT SPId FROM ScrewPredictedTables) SP&#xA; ON (S.Id=SP.SPId)"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -186,7 +186,7 @@ LEFT JOIN
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DB200F2E-F2B8-48DD-9310-98749F0C6896}"
-          SQLTask:SqlStatementSource="SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_13281383-8249-4f16-89ca-c8c3ddaf4c00') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA; LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)"
+          SQLTask:SqlStatementSource="SELECT F.Id,F.IsProcessCompleted,A.AssetName,ISNULL(S.Id,0) from&#xA;(SELECT Id,EquipmentId,IsProcessCompleted FROM [DPM].[dbo].[Asset_FailureMode] &#xA;where IsProcessCompleted=1  AND Description=N'ScrewCompressor_1e280383-8249-4f16-89ca-c8c3ddaf4c01') F&#xA;LEFT JOIN &#xA;(SELECT AssetName,Id from Asset_Equipments ) A&#xA; ON (F.EquipmentId=A.Id)&#xA; LEFT JOIN &#xA; (SELECT * from ScrewParameters) S &#xA; ON (F.Id=S.FailureModeId)"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -211,6 +211,36 @@ LEFT JOIN
           VSTAMinorVersion="0"
           Language="CSharp"
           ReadOnlyVariables="User::SPId">
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_1f69c195bac045a8a4bcb6bf2416586c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_1f69c195bac045a8a4bcb6bf2416586c")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -330,35 +360,6 @@ LEFT JOIN
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1f69c195bac045a8a4bcb6bf2416586c.Properties.Settings.get_Default():ST_1f69c195bac045a8a4bcb6bf2416586c.Properties.Sett" +
-    "ings")]
-
-namespace ST_1f69c195bac045a8a4bcb6bf2416586c.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -614,35 +615,34 @@ namespace ST_1f69c195bac045a8a4bcb6bf2416586c
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_1f69c195bac045a8a4bcb6bf2416586c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_1f69c195bac045a8a4bcb6bf2416586c")]
-[assembly: AssemblyCopyright("Copyright @  2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_1f69c195bac045a8a4bcb6bf2416586c.Properties.Settings.get_Default():ST_1f69c195bac045a8a4bcb6bf2416586c.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_1f69c195bac045a8a4bcb6bf2416586c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.settings"
             Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -941,32 +941,40 @@ END"</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,55.2"
-          Size="204.8,98.4"
+          PanelSize="205,55"
+          Size="205,98"
           Id="Package\Assign Values to variables"
           TopLeft="60,131.011765735455" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="77.000001106944,60" />
+          Size="172,42"
+          Id="Package\Check if data added"
+          TopLeft="78.5714299094921,357.117652067264" />
         <NodeLayout
-          Size="196,41.6"
+          Size="162,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="81.000001106944,23" />
+        <NodeLayout
+          Size="196,42"
           Id="Package\Script Task for Prediction"
           TopLeft="72.1428583714428,276.82353329411" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Update Process Completed to 1"
+          TopLeft="50.7142865779449,424.247064582699" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="160.300000553472,101.6">
+          TopLeft="162.250000553472,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.4117657354552"
+              EndConnector="0,66.011765735455"
               Start="0,0"
-              End="0,21.9117657354552">
+              End="0,58.511765735455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.9117657354552" />
+                    End="0,58.511765735455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -999,10 +1007,6 @@ END"</DTS:PropertyExpression>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Check if data added"
-          TopLeft="78.5714299094921,357.117652067264" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="167.357144140467,318.42353329411">
@@ -1025,10 +1029,6 @@ END"</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="226.4,41.6"
-          Id="Package\Update Process Completed to 1"
-          TopLeft="50.7142865779449,424.247064582699" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="164.242858243718,398.717652067264">
